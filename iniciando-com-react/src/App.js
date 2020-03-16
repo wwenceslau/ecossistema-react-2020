@@ -1,26 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+function ComponenteFuncional(props) {
+
+  const criarCombobox = () => {
+    const opcoes = ["Masculino", "Feminino"]
+    const comboBoxOpcoes = opcoes.map(opcao => <option key={opcao}>{opcao}</option>)
+    return(
+      <select>
+        {comboBoxOpcoes}
+      </select>
+    )
+  }
+  const Combo = () => criarCombobox();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello {props.nome} com idade de {props.idade}</h1> 
+     <br />
+     <Combo />
     </div>
   );
+}
+
+class App extends React.Component {
+  state = {
+    nome : ''
+  }
+
+  modificarNome = (event) => {
+    this.setState({
+      nome: event.target.value
+    })
+  }
+
+  render(){
+    return (
+      <>
+         <input className="centralizar" type="text" value={this.state.nome} onChange={this.modificarNome} />
+         <ComponenteFuncional nome={this.state.nome} idade={this.props.idade}/>
+      </>
+    )
+  }
+
 }
 
 export default App;
