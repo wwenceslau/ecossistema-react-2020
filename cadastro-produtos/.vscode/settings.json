@@ -1,0 +1,15 @@
+{
+  "eslint.format.enable": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.tabSize": 2,
+  "editor.fontSize": 13,
+  "eslint.lintTask.enable": true,
+  "javascript.preferences.quoteStyle": "single",
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "javascript.suggest.completeFunctionCalls": true
+}
